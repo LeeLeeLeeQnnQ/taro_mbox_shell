@@ -3,6 +3,7 @@ import { Provider } from '@tarojs/mobx'
 import Index from './pages/index'
 
 import position from './store/position'
+import counter from './store/counter'
 
 import './app.less'
 
@@ -13,14 +14,15 @@ import './app.less'
 // }
 
 const store = {
-  position
+  position,
+  counter
 }
 
 class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/home/home',
     ],
     window: {
       backgroundTextStyle: 'light',

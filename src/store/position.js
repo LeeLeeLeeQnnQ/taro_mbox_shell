@@ -1,4 +1,4 @@
-import { observable } from 'mobx'
+import { observable , computed } from 'mobx'
 
 const position = observable({
   user_position: {},

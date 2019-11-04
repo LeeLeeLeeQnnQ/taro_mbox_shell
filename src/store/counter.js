@@ -1,20 +1,17 @@
-import { observable } from 'mobx'
+import { observable, computed , action } from "mobx";
 
-const counterStore = observable({
-  counter: 0,
-  counterStore() {
-    this.counter++
-  },
-  increment() {
-    this.counter++
-  },
-  decrement() {
-    this.counter--
-  },
-  incrementAsync() {
-    setTimeout(() => {
-      this.counter++
-    }, 1000)
-  }
-})
-export default counterStore
+class Counter {
+    constructor(props) {
+    }
+    @observable price = 1;
+    @observable amount = 1;
+    @action changeAmount( amount ) {
+      this.amount = amount;
+    }
+    @computed get getTotal() {
+      return this.price * this.amount;
+    }
+}
+const counter = new Counter()
+
+export default counter
